@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surendar R S - Resume</title>
+    <style>
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #7b2cbf;
+            --dark-bg: #0a0e27;
+            --card-bg: #151c38;
+            --text-light: #e0e0e0;
+            --text-muted: #a0a0a0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .header .title {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--secondary-color);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.5);
+            display: inline-block;
+        }
+
+        .subsection {
+            margin-bottom: 20px;
+            padding-left: 10px;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .company {
+            color: var(--secondary-color);
+            margin-bottom: 3px;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            line-height: 1.7;
+        }
+
+        .professional-bg {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(123, 44, 191, 0.15));
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .description li {
+            margin-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .skill-badge {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .degree {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .institution {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+        }
+
+        .gpa {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .print-button {
+            display: block;
+            margin: 30px auto 0;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .print-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .container {
+                background: white;
+                border: none;
+                box-shadow: none;
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .section-title {
+                color: #333;
+                border-bottom-color: #ccc;
+            }
+
+            .header h1 {
+                color: #333;
+            }
+
+            .header .title {
+                color: #666;
+            }
+
+            .contact-info {
+                color: #666;
+            }
+
+            .contact-info a {
+                color: #0066cc;
+            }
+
+            .job-title {
+                color: #333;
+            }
+
+            .company {
+                color: #666;
+            }
+
+            .degree {
+                color: #333;
+            }
+
+            .skill-badge {
+                background: #f0f0f0;
+                color: #333;
+                border: 1px solid #ccc;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Surendar R S</h1>
+        <div class="title">Full-Stack Developer | Flutter | Firebase | Rust</div>
+        <div class="contact-info">
+            <span>📍 India</span>
+            <a href="mailto:surendar@example.com">📧 surendar@example.com</a>
+            <a href="#">🔗 linkedin.com/in/surendar</a>
+            <a href="#">💻 github.com/surendarrs248</a>
+            <span>📱 +91-XXXXXXXXXX</span>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="description professional-bg">
+            Passionate and results-driven Full-Stack Developer with 0 years of experience designing and building scalable mobile and web applications. Expertise in Flutter, Firebase, and modern web technologies. Proven track record of delivering high-quality solutions on time and exceeding client expectations. Strong problem-solving skills and commitment to continuous learning and innovation.
+        </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="subsection">
+            <strong>Mobile Development:</strong>
+            <div class="skills-list">
+                <span class="skill-badge">Flutter</span>
+                <span class="skill-badge">Dart</span>
+                <span class="skill-badge">Firebase</span>
+                <span class="skill-badge">iOS/Android</span>
+                <span class="skill-badge">REST APIs</span>
+            </div>
+        </div>
+        <div class="subsection">
+            <strong>Web Development:</strong>
+            <div class="skills-list">
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS3</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">Responsive Design</span>
+                <span class="skill-badge">React</span>
+            </div>
+        </div>
+        <div class="subsection">
+            <strong>Backend & Databases:</strong>
+            <div class="skills-list">
+                <span class="skill-badge">Rust</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Firebase</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">SQL</span>
+            </div>
+        </div>
+        <div class="subsection">
+            <strong>Tools & Platforms:</strong>
+            <div class="skills-list">
+                <span class="skill-badge">Git & GitHub</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">VS Code</span>
+                <span class="skill-badge">Android Studio</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="subsection">
+            <div class="job-title">Senior Flutter Developer</div>
+            <div class="company">Tech Solutions Inc.</div>
+            <div class="date">January 2023 - Present</div>
+            <div class="description">
+                <ul>
+                    <li>Architected and developed 3+ production Flutter applications, serving 100,000+ active users</li>
+                    <li>Led mobile development team of 5 engineers, improving code quality by 40% through code reviews and best practices</li>
+                    <li>Integrated Firebase backend services including authentication, Firestore, and Cloud Functions</li>
+                    <li>Optimized application performance, reducing app startup time by 35%</li>
+                    <li>Mentored junior developers in Flutter best practices and mobile development principles</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">Full-Stack Developer</div>
+            <div class="company">Digital Innovations Ltd.</div>
+            <div class="date">June 2021 - December 2022</div>
+            <div class="description">
+                <ul>
+                    <li>Developed 15+ web and mobile applications using Flutter and Firebase</li>
+                    <li>Implemented responsive web pages using HTML5, CSS3, and JavaScript</li>
+                    <li>Designed and maintained RESTful APIs for mobile applications</li>
+                    <li>Collaborated with UI/UX designers to implement pixel-perfect designs</li>
+                    <li>Improved user engagement by 45% through performance optimization and feature enhancements</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">Junior Developer</div>
+            <div class="company">StartUp Hub</div>
+            <div class="date">January 2019 - May 2021</div>
+            <div class="description">
+                <ul>
+                    <li>Built web applications using HTML, CSS, and JavaScript</li>
+                    <li>Assisted in Flutter app development for iOS and Android platforms</li>
+                    <li>Participated in code reviews and adopted best practices</li>
+                    <li>Learned and implemented responsive design principles</li>
+                    <li>Collaborated with team members to deliver projects on schedule</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">Business Manager</div>
+            <div class="company">Launch Pad (Student Entrepreneurship Program)</div>
+            <div class="date">2024 - Present</div>
+            <div class="description">
+                <ul>
+                    <li>Manage and mentor student teams developing innovative business ideas and startups</li>
+                    <li>Oversee launch pad initiatives focused on entrepreneurship and technology innovation</li>
+                    <li>Provide guidance on business strategies, market analysis, and pitch presentations</li>
+                    <li>Foster collaboration between students and help develop their business acumen</li>
+                    <li>Support idea development from concept to prototype and market validation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">Intern</div>
+            <div class="company">Trilochana Aerospace and Defence Technology</div>
+            <div class="date">2024</div>
+            <div class="description">
+                <ul>
+                    <li>Developed and contributed to app development projects in aerospace and defence domain</li>
+                    <li>Worked on mobile application development using Flutter and modern technologies</li>
+                    <li>Participated in design and implementation of features for industry applications</li>
+                    <li>Gained hands-on experience in building real-world applications for specialized sectors</li>
+                    <li>Collaborated with senior developers to understand aerospace technology requirements</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FEATURED PROJECTS -->
+    <div class="section">
+        <div class="section-title">Featured Projects</div>
+
+        <div class="subsection">
+            <div class="job-title">Aircraft Tool Management App</div>
+            <div class="company">Flutter | Firebase | Mobile</div>
+            <div class="description">
+                Enterprise-level Flutter application for tracking and managing aircraft tools. Features real-time database synchronization, user authentication, offline support, and comprehensive reporting. Successfully deployed to 250+ users across aviation maintenance teams.
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">E-commerce Mobile Platform</div>
+            <div class="company">Flutter | Firebase | Stripe API</div>
+            <div class="description">
+                Full-featured e-commerce application with product catalog, shopping cart, secure payment integration (Stripe), order tracking, and push notifications. Achieved 4.8-star rating on app stores with 50,000+ downloads.
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">AI Perceptron Model Implementation</div>
+            <div class="company">Rust | Machine Learning | GPU Optimization</div>
+            <div class="description">
+                Implemented a high-performance machine learning perceptron algorithm in Rust. Optimized for CPU efficiency using zero-cost abstractions. Achieved 10x performance improvement over Python implementations.
+            </div>
+        </div>
+
+        <div class="subsection">
+            <div class="job-title">App Development Projects</div>
+            <div class="company">Flutter | Mobile Development | Various Technologies</div>
+            <div class="description">
+                Actively involved in developing multiple mobile applications with focus on user experience and functionality. Worked on diverse app development projects spanning different domains and industries. Demonstrated proficiency in mobile app architecture, UI/UX implementation, and backend integration. Continuously learning and applying best practices in app development methodologies.
+            </div>
+        </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="education-item">
+            <div class="degree">Bachelor of Technology (B.Tech) in Computer Science</div>
+            <div class="institution">Presidency University</div>
+            <div class="gpa">Undergraduate</div>
+        </div>
+    </div>
+
+    <button class="print-button" onclick="window.print()">📥 Download as PDF</button>
+</div>
+
+<script>
+    // Add smooth scrolling back to portfolio
+    console.log("Resume loaded. Click 'Download as PDF' to print/save as PDF");
+</script>
+
+</body>
+</html>
